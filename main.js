@@ -26,8 +26,6 @@ function agregarClienteLocal() {
   const correo = document.getElementById('correoInput').value;
   const direccion = document.getElementById('direccionInput').value;
 
-
-
   if (!nombre || !dni || !correo || !direccion) {
     const alertContainer = document.getElementById('alertContainer');
     const alertMessage = document.getElementById('alertMessage');
@@ -36,7 +34,7 @@ function agregarClienteLocal() {
     alertMessage.textContent = 'Por favor, rellena todos los campos.'; // Mensaje de alerta
     alertContainer.style.display = 'block'; // Mostrar el contenedor de alerta
 
-    // Opcional: ocultar la alerta después de 3 segundos
+    // ocultar la alerta después de 3 segundos
     setTimeout(() => {
       alertContainer.style.display = 'none'; // Ocultar después de 3 segundos
     }, 3000);
