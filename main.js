@@ -1,4 +1,4 @@
-import { agregarCliente, enviarCliente, eliminarCliente, modificarCliente } from "./operaciones.js";
+import { agregarCliente, enviarCliente, eliminarCliente, modificarCliente } from "./clienteManager.js";
 
 function mostrarCliente() {
   const tabla = document.getElementById('clientesTableBody');
@@ -26,11 +26,26 @@ function agregarClienteLocal() {
   const correo = document.getElementById('correoInput').value;
   const direccion = document.getElementById('direccionInput').value;
 
+
+
+  if (!nombre || !dni || !correo || !direccion) {
+    const alertContainer = document.getElementById('alertContainer');
+    const alertMessage = document.getElementById('alertMessage');
+
+    // Establecer el mensaje de alerta y mostrar el contenedor
+    alertMessage.textContent = 'Por favor, rellena todos los campos.'; // Mensaje de alerta
+    alertContainer.style.display = 'block'; // Mostrar el contenedor de alerta
+
+    // Opcional: ocultar la alerta después de 3 segundos
+    setTimeout(() => {
+      alertContainer.style.display = 'none'; // Ocultar después de 3 segundos
+    }, 3000);
+
+    return; // Salir de la función si no se cumple la condición
+  }  
+  
   //Agregamos los clientes
   agregarCliente({ nombre, dni, correo, direccion });
-
-  console.log('Datos a enviar:', { nombre, correo });
-
   // Mostrar la tabla si está oculta
   const clientesTable = document.getElementById('clientesTable');
   clientesTable.style.display = 'table'; // Mostrar la tabla
