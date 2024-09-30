@@ -12,26 +12,40 @@
 </head>
 
 <body>
-    <main class="d-flex justify-content-center align-items-center">
-        <div class="card text-center col-lg-4 col-md-6 col-sm-12 my-5">
+    <main class="d-flex flex-column align-items-center">
+        <div class="card col-lg-4 col-md-6 col-sm-12 my-5">
             <div class="card-header">
                 <h1> Gestión Clientes </h1>
             </div>
             <div class="card-body">
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombreInput" placeholder="Nombre">
                 </div>
                 <div class="mb-3">
-                    <label for="nombreInput1" class="form-label">Correo</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="nombre@ejemplo.com">
+                    <label for="correo" class="form-label">Correo</label>
+                    <input type="email" class="form-control" id="correoInput" placeholder="nombre@ejemplo.com">
                 </div>
-                <button type="button" class="btn btn-info">Añadir</button>
+                <button type="button" class="btn btn-info" onclick="agregarClienteLocal()">Añadir</button>
             </div>
-            
+        </div>
+
+        <div class="container my-5">
+            <table class="table table-bordered" id="clientesTable">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                    </tr>
+                </thead>
+                <tbody id="clientesTableBody">
+                    <!-- Filas de clientes se añadirán aquí -->
+                </tbody>
+            </table>
         </div>
     </main>
+
+    <script type="module" src="./main.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
