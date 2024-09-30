@@ -12,7 +12,7 @@ export function enviarCliente() {
 }
 //eliminar
 export function eliminarCliente(index) {
-    clients.splice(index, 1);
+    clientesArray.splice(index, 1);
     //se tiene que buscar su posicion para eliminar
 }
 //actualizar

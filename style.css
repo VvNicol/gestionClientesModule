@@ -1,4 +1,61 @@
 #clientesTable {
     display: none;
-    /* Ocultar la tabla inicialmente */
+    /* Ocultar inicialmente */
+}
+
+/* Animación de entrada para la tarjeta */
+.card {
+    opacity: 0; /* Comienza invisible */
+    transform: translateY(-20px); /* Desplazamiento inicial */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    animation: slideIn 0.5s forwards; /* Aplicar animación al cargar */
+}
+
+/* Keyframes para la animación de la tarjeta */
+@keyframes slideIn {
+    to {
+        opacity: 1; /* Hacerla visible */
+        transform: translateY(0); /* Regresar a la posición original */
+    }
+}
+
+/* Animación para los campos de entrada */
+input.form-control {
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+input.form-control:focus {
+    border-color: #0e6185; /* Cambiar el color al hacer foco a un verde amigable */
+    transform: scale(1.02); /* Efecto de escalado al enfocar */
+    box-shadow: 0 0 5px rgba(76, 96, 175, 0.5); /* Sombra de enfoque */
+}
+
+/* Efecto de resalte en los botones de añadir */
+button.btn-info {
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button.btn-info:hover {
+    background-color: #2d96ff; /* Color de fondo al pasar el mouse */
+    transform: scale(1.02);
+}
+
+button.btn-info:active {
+    transform: scale(0.98);
+    background-color: #26edff; /* Cambia el color al hacer clic */
+}
+
+/* Estilos para el botón de eliminar */
+button.btn-danger {
+    transition: background-color 0.3s, transform 0.2s; /* Aplica transición similar al botón de añadir */
+}
+
+button.btn-danger:hover {
+    background-color: #f44336; /* Color de fondo al pasar el mouse */
+    transform: scale(1.02); /* Efecto de escalado en hover */
+}
+
+button.btn-danger:active {
+    transform: scale(0.98); /* Efecto de escalado al hacer clic */
+    background-color: #c62828; /* Cambia el color al hacer clic */
 }
